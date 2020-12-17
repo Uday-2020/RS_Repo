@@ -47,10 +47,10 @@ class RecipeServiceTest {
 		
 		Mockito.when(mockRecipeRepository.findById(Mockito.anyInt())).thenReturn(recipe);
 
-		// Then
+		
 		Recipe result = recipeService.getRecipeById(101);
 
-		// verify
+		
 		assertEquals("French Onion Tart", result.getRecipeName());
 		verify(mockRecipeRepository, times(1)).findById(Mockito.anyInt());
 		verify(mockRecipeRepository, never()).findAll();
@@ -74,11 +74,11 @@ class RecipeServiceTest {
 		
 		Mockito.when(mockRecipeRepository.findAll()).thenReturn(recipes);
 
-		// Then
+		
 		List<Recipe> result = recipeService.getAllRecipes();
 
-		// verify
-		assertEquals(1,recipes.size());
+		
+		assertEquals(1,result.size());
 		verify(mockRecipeRepository, times(1)).findAll();
 		verify(mockRecipeRepository, never()).findById(Mockito.anyInt());
 
@@ -99,7 +99,7 @@ class RecipeServiceTest {
 		
 		Mockito.when(mockRecipeRepository.save(Mockito.any(Recipe.class))).thenReturn(recipe);
 
-		// Then
+		
 		Recipe actual = recipeService.createRecipe(recipe);
 
 		assertEquals(recipe, actual);
@@ -123,7 +123,7 @@ class RecipeServiceTest {
 
 		Mockito.when(mockRecipeRepository.save(Mockito.any(Recipe.class))).thenReturn(recipe);
 
-		// Then
+		
 		boolean actual = recipeService.updateRecipe(recipe);
 
 		assertEquals(true, actual);

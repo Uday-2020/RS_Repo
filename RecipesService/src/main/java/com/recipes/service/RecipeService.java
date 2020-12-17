@@ -91,7 +91,7 @@ public class RecipeService {
 	 * This method is used to delete recipe details for a particular id.
 	 * 
 	 * @param id
-	 * @return boolean.
+	 * @return boolean returns true/false.
 	 */
 	public boolean deleteRecipeById(int id) {
 		boolean status = false;

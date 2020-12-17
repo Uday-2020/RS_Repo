@@ -59,16 +59,16 @@ class RecipeRequestValidationsTest {
 		array.put(new JSONObject());
 		
 		input.put("ingredients", array);
-		// Given
+		
 		String contentToBeCreated = input.toString();
-		// When
+		
 		Mockito.when(mockRecipeService.createRecipe(Mockito.any())).thenReturn(new Recipe());
 
-		// Then
+		
 		RequestBuilder postRequestBuilder = MockMvcRequestBuilders.post(apiContext + "/")
 				.accept(MediaType.APPLICATION_JSON).content(contentToBeCreated).contentType(MediaType.APPLICATION_JSON);
 
-		// verify
+		
 		ResultMatcher expected = status().isBadRequest();
 		mockMvc.perform(postRequestBuilder).andExpect(expected);
 
@@ -89,16 +89,16 @@ class RecipeRequestValidationsTest {
 		array.put(new JSONObject());
 		
 		input.put("ingredients", array);
-		// Given
+		
 		String contentToBeCreated = input.toString();
-		// When
+		
 		Mockito.when(mockRecipeService.createRecipe(Mockito.any())).thenReturn(new Recipe());
 
-		// Then
+		
 		RequestBuilder postRequestBuilder = MockMvcRequestBuilders.post(apiContext + "/")
 				.accept(MediaType.APPLICATION_JSON).content(contentToBeCreated).contentType(MediaType.APPLICATION_JSON);
 
-		// verify
+		
 		ResultMatcher expected = status().isBadRequest();
 		mockMvc.perform(postRequestBuilder).andExpect(expected);
 
@@ -115,16 +115,16 @@ class RecipeRequestValidationsTest {
 		input.put("creationDate", "14‐12‐2020 18:30");
 		input.put("ingredients", "[]");
 		
-		// Given
+		
 		String contentToBeCreated = input.toString();
-		// When
+		
 		Mockito.when(mockRecipeService.createRecipe(Mockito.any())).thenReturn(new Recipe());
 
-		// Then
+		
 		RequestBuilder postRequestBuilder = MockMvcRequestBuilders.post(apiContext + "/")
 				.accept(MediaType.APPLICATION_JSON).content(contentToBeCreated).contentType(MediaType.APPLICATION_JSON);
 
-		// verify
+		
 		ResultMatcher expected = status().isBadRequest();
 		mockMvc.perform(postRequestBuilder).andExpect(expected);
 
@@ -144,16 +144,16 @@ class RecipeRequestValidationsTest {
 		array.put(new JSONObject());
 		
 		input.put("ingredients", array);
-		// Given
+		
 		String contentToBeCreated = input.toString();
-		// When
+		
 		Mockito.when(mockRecipeService.createRecipe(Mockito.any())).thenReturn(new Recipe());
 
-		// Then
+		
 		RequestBuilder postRequestBuilder = MockMvcRequestBuilders.post(apiContext + "/")
 				.accept(MediaType.APPLICATION_JSON).content(contentToBeCreated).contentType(MediaType.APPLICATION_JSON);
 
-		// verify
+		
 		ResultMatcher expected = status().isBadRequest();
 		mockMvc.perform(postRequestBuilder).andExpect(expected);
 
@@ -172,16 +172,16 @@ class RecipeRequestValidationsTest {
 		array.put(new JSONObject());
 		
 		input.put("ingredients", array);
-		// Given
+		
 		String contentToBeCreated = input.toString();
-		// When
+		
 		Mockito.when(mockRecipeService.createRecipe(Mockito.any())).thenReturn(new Recipe());
 
-		// Then
+		
 		RequestBuilder postRequestBuilder = MockMvcRequestBuilders.post(apiContext + "/")
 				.accept(MediaType.APPLICATION_JSON).content(contentToBeCreated).contentType(MediaType.APPLICATION_JSON);
 
-		// verify
+		
 		ResultMatcher expected = status().isBadRequest();
 		mockMvc.perform(postRequestBuilder).andExpect(expected);
 

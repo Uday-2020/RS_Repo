@@ -227,21 +227,20 @@ System.out.println("contentToBeCreated : "+contentToBeCreated);
 	}
 
 	@Test
-	void GivenInvalidIdWhenTriedToDeleteThenReturnFalse() throws Exception {
+	void GivenInvalidIdWhenTriedToDeleteThenReturnFalsewithOK() throws Exception {
 
-		// Given
+		
 		int id = 101;
 		boolean status = false;
 
-		// When
+		
 		Mockito.when(mockRecipeService.deleteRecipeById(id)).thenReturn(status);
 
-		// Then
+		
 		RequestBuilder getRequestBuilder = MockMvcRequestBuilders.delete(apiContext + "/" + id);
 
-		// verify
+		
 		ResultMatcher expected = status().isOk();
-		// mockMvc.perform(getRequestBuilder).andReturn().getResponse().getContentAsString()
 		mockMvc.perform(getRequestBuilder).andExpect(expected);
 
 		verify(mockRecipeService, times(1)).deleteRecipeById(Mockito.anyInt());
